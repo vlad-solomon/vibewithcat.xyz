@@ -13,6 +13,8 @@ loadVideo.click(function(){
 
     if(videoLinkString.match(condition)){
 
+        console.log(isVideoPlaying)
+
         $("#text-field").val("")
 
         const video = $("iframe");
@@ -38,8 +40,13 @@ resetButton.click(function(){
     $("#dancing-cat")[0].pause();
     $(this).css("display" , "none")
     togglePlay.css("display" , "none")
-    togglePlay.text("❚❚")
     container.children().removeAttr("style")
+    isVideoPlaying = false
+    if(!isVideoPlaying){
+        togglePlay.text("❚❚")
+        isVideoPlaying = true
+    }
+
 })
 
 function pauseYoutube(){
