@@ -13,17 +13,16 @@ loadVideo.click(function(){
 
     if(videoLinkString.match(condition)){
 
-        console.log(isVideoPlaying)
-
         $("#text-field").val("")
 
         const video = $("iframe");
-        video.attr("src" , `https://www.youtube.com/embed/${videoId}?enablejsapi=1&playlist=${videoId}&autoplay=1&loop=1`)
+        video.attr("src" , `https://www.youtube.com/embed/${videoId}?enablejsapi=1&playlist=${videoId}&loop=1`)
         
         setTimeout(function(){
             $("#dancing-cat")[0].play();
             resetButton.css("display" , "block")
             togglePlay.css("display" , "block")
+            resumeYoutube();
         }, 2000)
     
         container.children().css("display" , "none");
